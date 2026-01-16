@@ -12,15 +12,12 @@ Bread-Backup ile 5 dakikada başlayın!
 
 ```bash
 # Bağımlılıkları kurun
-sudo pacman -S python-click python-rich python-yaml git
+sudo pacman -S python-pipx git
 
 # Klonlayın ve kurun
 git clone https://github.com/ahwetekm/bread-backup.git
 cd bread-backup
-pip install --user -e .
-
-# PATH'e ekleyin (gerekirse)
-export PATH="$HOME/.local/bin:$PATH"
+pipx install -e .
 
 # Kurulumu doğrulayın
 bread-backup --version
@@ -115,8 +112,7 @@ bread-backup restore backup-dosyasi.bread --config-only
 cd ~/Projects
 git clone https://github.com/ahwetekm/bread-backup.git
 cd bread-backup
-pip install --user -e .
-export PATH="$HOME/.local/bin:$PATH"
+pipx install -e .
 
 # Gün 1: İlk backup
 bread-backup backup --destination /backup

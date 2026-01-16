@@ -1,7 +1,8 @@
 {
   "permissions": {
     "allow": [
-      "Bash(python -m bread_backup:*)"
+      "Bash(python -m bread_backup:*)",
+      "Bash(git commit:*)"
     ]
   }
 }

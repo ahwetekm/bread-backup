@@ -81,81 +81,46 @@ sudo pacman -S xz lz4
 
 ## Kurulum Yöntemleri
 
-### Yöntem 1: Kaynak Koddan (Geliştirme Modu) - Önerilen
+### Yöntem 1: Pipx ile Kurulum (Önerilen) ⭐
 
-Bu yöntem, projeyi düzenlenebilir modda kurar. Güncellemeler için `git pull` yapmanız yeterlidir.
+Modern Arch Linux sistemlerinde (Python 3.11+) en iyi yöntem budur. Pipx, otomatik olarak izole bir virtual environment oluşturur.
 
 ```bash
-# 1. Bağımlılıkları kur
-sudo pacman -S python-click python-rich python-yaml git base-devel
+# 1. Pipx'i kur
+sudo pacman -S python-pipx git
 
 # 2. Projeyi klonla
 cd ~/Projects  # veya istediğiniz dizin
 git clone https://github.com/ahwetekm/bread-backup.git
 cd bread-backup
 
-# 3. Geliştirme modunda kur
-pip install --user -e .
+# 3. Pipx ile kur (editable mode)
+pipx install -e .
 
-# 4. PATH'e ekle (gerekirse)
-export PATH="$HOME/.local/bin:$PATH"
-
-# 5. Kurulumu test et
+# 4. Kurulumu test et
 bread-backup --version
 # bread-backup, version 0.1.0
 ```
 
 **Avantajlar:**
-- ✅ Kolay güncelleme (`git pull`)
-- ✅ Kod değişiklikleri anında aktif
-- ✅ Geliştirme için ideal
+- ✅ Modern ve temiz yaklaşım
+- ✅ Otomatik virtual environment yönetimi
+- ✅ Global olarak erişilebilir komut
+- ✅ `externally-managed-environment` hatası yok
+- ✅ Kolay güncelleme (`git pull && pipx reinstall bread-backup`)
 
 **Dezavantajlar:**
 - ⚠️ Proje dizinini silmemelisiniz
-- ⚠️ PATH ayarı gerekebilir (ilk kullanımda)
 
 ---
 
-### Yöntem 2: Pip ile Kurulum (Lokal)
+### Yöntem 2: Virtual Environment (İzole Ortam)
 
-Sisteme karışmadan sadece kullanıcı için kurulum.
-
-```bash
-# 1. Bağımlılıkları kur
-sudo pacman -S python-click python-rich python-yaml git
-
-# 2. Projeyi klonla
-git clone https://github.com/ahwetekm/bread-backup.git
-cd bread-backup
-
-# 3. Kullanıcı için kur (sudo yok)
-pip install --user .
-
-# 4. PATH'e ekle (eğer yoksa)
-echo 'export PATH="$HOME/.local/bin:$PATH"' >> ~/.bashrc
-source ~/.bashrc
-
-# 5. Test et
-bread-backup --version
-```
-
-**Avantajlar:**
-- ✅ Sistem-wide değil, sadece kullanıcı
-- ✅ sudo gerektirmez
-
-**Dezavantajlar:**
-- ⚠️ PATH ayarı gerekebilir
-- ⚠️ Her kullanıcı ayrı kurmalı
-
----
-
-### Yöntem 3: Virtual Environment (İzole)
-
-Tamamen izole bir ortamda kurulum.
+Tamamen izole bir ortamda kurulum. Geliştirme için idealdir.
 
 ```bash
 # 1. Bağımlılıkları kur
-sudo pacman -S python-click python-rich python-yaml git
+sudo pacman -S python git
 
 # 2. Projeyi klonla
 git clone https://github.com/ahwetekm/bread-backup.git
@@ -179,10 +144,42 @@ bread-backup --version
 **Avantajlar:**
 - ✅ Tamamen izole
 - ✅ Sistem temiz kalır
+- ✅ Geliştirme için ideal
 
 **Dezavantajlar:**
 - ⚠️ Her kullanımda `source venv/bin/activate` gerekli
 - ⚠️ Daha karmaşık
+
+---
+
+### Yöntem 3: Arch Sistem Paketleri ile (Geliştiriciler için)
+
+**Not:** Bu yöntem artık önerilmiyor çünkü `externally-managed-environment` hatası verir. Ancak geliştirme ortamında kullanılabilir.
+
+```bash
+# 1. Sistem paketlerini kur
+sudo pacman -S python-click python-rich python-yaml git
+
+# 2. Projeyi klonla
+git clone https://github.com/ahwetekm/bread-backup.git
+cd bread-backup
+
+# 3. Virtual environment ile kur (zorunlu)
+python -m venv venv
+source venv/bin/activate
+pip install -e .
+
+# Test et
+bread-backup --version
+```
+
+**Avantajlar:**
+- ✅ Sistem paketleri kullanır
+- ✅ Bağımlılıklar pacman ile yönetilir
+
+**Dezavantajlar:**
+- ⚠️ Yine de virtual environment gerekli
+- ⚠️ Her kullanımda activate gerekli
 
 ---
 
@@ -252,40 +249,41 @@ Hatasız çalışmalı ve paket sayısını göstermeli.
 
 ## Güncelleme
 
-### Kaynak Koddan Kurulum Güncelleme
+### Pipx Kurulum Güncelleme (Yöntem 1)
 
 ```bash
 cd ~/Projects/bread-backup
 git pull
-pip install --user -e .
+pipx reinstall bread-backup
 ```
 
-### Pip Kurulum Güncelleme
+### Virtual Environment Güncelleme (Yöntem 2)
 
 ```bash
 cd ~/Projects/bread-backup
 git pull
-pip install --user --upgrade .
+source venv/bin/activate
+pip install -e .
 ```
 
 ---
 
 ## Kaldırma
 
-### Kaynak Koddan Kurulumu Kaldırma
+### Pipx Kurulumunu Kaldırma
 
 ```bash
 # Paketi kaldır
-pip uninstall bread-backup
+pipx uninstall bread-backup
 
 # Projeyi sil (opsiyonel)
 rm -rf ~/Projects/bread-backup
 ```
 
-### Pip Kurulumu Kaldırma
+### Virtual Environment Kurulumunu Kaldırma
 
 ```bash
-pip uninstall bread-backup
+# Projeyi sil (environment dahil)
 rm -rf ~/Projects/bread-backup
 ```
 
@@ -339,44 +337,38 @@ sudo pacman -S python-pip
 
 ---
 
-### Sorun 4: "Permission denied" (sudo pip install)
+### Sorun 4: "Permission denied" veya "externally-managed-environment"
 
-**Neden:** Yazma izni yok veya externally-managed-environment hatası.
+**Neden:** Python 3.11+ Arch Linux, sistem Python'una paket kurulmasını engelliyor (PEP 668).
 
-**Çözüm (Önerilen):** Kullanıcı modunda kurun:
+**Çözüm 1 (Önerilen):** Pipx kullanın:
 ```bash
-pip install --user -e .
-export PATH="$HOME/.local/bin:$PATH"
+sudo pacman -S python-pipx
+pipx install -e .
 ```
 
----
-
-### Sorun 5: "externally-managed-environment" hatası
-
-Python 3.11+ ile gelebilir.
-
-**Hata:**
-```
-error: externally-managed-environment
-
-× This environment is externally managed
-```
-
-**Çözüm 1:** Virtual environment kullanın (Önerilen):
+**Çözüm 2:** Virtual environment kullanın:
 ```bash
 python -m venv venv
 source venv/bin/activate
 pip install -e .
 ```
 
-**Çözüm 2:** `--break-system-packages` flag (Dikkatli):
-```bash
-pip install --break-system-packages .
-```
+---
 
-**Çözüm 3:** Arch paketlerini kullanın:
+### Sorun 5: "command not found: bread-backup" (pipx kurulumundan sonra)
+
+**Neden:** PATH'de `~/.local/bin` yok.
+
+**Çözüm:**
 ```bash
-sudo pacman -S python-click python-rich python-yaml
+# PATH'e ekle
+echo 'export PATH="$HOME/.local/bin:$PATH"' >> ~/.bashrc
+source ~/.bashrc
+
+# Veya hemen kullan
+export PATH="$HOME/.local/bin:$PATH"
+bread-backup --version
 ```
 
 ---

@@ -61,12 +61,11 @@ sudo umount /mnt/usb
 
 **Adım 2: Bread-Backup Kurulumu**
 ```bash
-sudo pacman -S python-click python-rich python-yaml git base-devel
+sudo pacman -S python-pipx git base-devel
 
 git clone https://github.com/ahwetekm/bread-backup.git
 cd bread-backup
-pip install --user -e .
-export PATH="$HOME/.local/bin:$PATH"
+pipx install -e .
 ```
 
 **Adım 3: Backup'ı Kopyala**
@@ -186,10 +185,9 @@ pacstrap /mnt base linux linux-firmware
 
 # Bread-backup kur
 arch-chroot /mnt
-pacman -S python-click python-rich python-yaml git
+pacman -S python-pipx git
 git clone https://github.com/ahwetekm/bread-backup.git
-cd bread-backup && pip install --user -e .
-export PATH="$HOME/.local/bin:$PATH"
+cd bread-backup && pipx install -e .
 
 # Backup'ı kopyala
 cp /backup/backup-mehmet-pc.bread /tmp/
@@ -373,10 +371,9 @@ bread-backup backup --destination /home/can/backup
 
 **Adım 3: Bread-Backup Kur**
 ```bash
-sudo pacman -S python-click python-rich python-yaml git
+sudo pacman -S python-pipx git
 git clone https://github.com/ahwetekm/bread-backup.git
-cd bread-backup && pip install --user -e .
-export PATH="$HOME/.local/bin:$PATH"
+cd bread-backup && pipx install -e .
 ```
 
 **Adım 4: Backup'ı Kopyala**

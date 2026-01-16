@@ -14,15 +14,12 @@ Get up and running with Bread-Backup in 5 minutes!
 
 ```bash
 # Install dependencies
-sudo pacman -S python-click python-rich python-yaml git
+sudo pacman -S python-pipx git
 
 # Clone and install
 git clone https://github.com/ahwetekm/bread-backup.git
 cd bread-backup
-pip install --user -e .
-
-# Add to PATH if needed
-export PATH="$HOME/.local/bin:$PATH"
+pipx install -e .
 
 # Verify installation
 bread-backup --version
@@ -117,8 +114,7 @@ bread-backup restore backup-file.bread --config-only
 cd ~/Projects
 git clone https://github.com/ahwetekm/bread-backup.git
 cd bread-backup
-pip install --user -e .
-export PATH="$HOME/.local/bin:$PATH"
+pipx install -e .
 
 # Day 1: First backup
 bread-backup backup --destination /backup
