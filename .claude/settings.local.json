@@ -2,7 +2,16 @@
   "permissions": {
     "allow": [
       "Bash(python -m bread_backup:*)",
-      "Bash(git commit:*)"
+      "Bash(git commit:*)",
+      "Bash(bread-backup backup:*)",
+      "Bash(~/.local/bin/bread-backup backup:*)",
+      "Bash(pipx reinstall:*)",
+      "Bash(pipx uninstall:*)",
+      "Bash(pipx install:*)",
+      "Bash(~/.local/bin/bread-backup info:*)",
+      "Bash(git add:*)",
+      "Bash(disk space\" error even when disk had sufficient space\n- Error message would show \"available 0.0 B\"\n\nFix:\n- Added self.storage.ensure_destination_exists\\(\\) call before disk check\n- Now creates directory first, then checks actual available space\n\nTested:\n- Successfully created backup to ~/yedeklerim \\(new directory\\)\n- 332 MB backup with 424 GB available space\n- 1369 packages + 3307 config files backed up successfully\n\nCo-Authored-By: Claude Sonnet 4.5 <noreply@anthropic.com>\nEOF\n\\)\")",
+      "Bash(git push:*)"
     ]
   }
 }

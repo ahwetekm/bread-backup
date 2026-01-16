@@ -229,6 +229,9 @@ class BackupOrchestrator:
         """
         console.print(f"Saving to {self.destination}...")
 
+        # Ensure destination exists before checking disk space
+        self.storage.ensure_destination_exists()
+
         # Check disk space
         file_size = backup_file.stat().st_size
         if not self.storage.check_disk_space(file_size):
