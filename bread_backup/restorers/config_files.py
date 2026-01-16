@@ -158,7 +158,13 @@ class ConfigRestorer:
 
             # Extract archive
             with tarfile.open(archive, "r:*") as tar:
-                tar.extractall(target_home)
+                # Use filter='data' to allow absolute path symlinks (Python 3.12+)
+                # For older Python, we need to handle it manually
+                try:
+                    tar.extractall(target_home, filter='data')
+                except TypeError:
+                    # Python < 3.12 doesn't have filter parameter
+                    tar.extractall(target_home)
                 members = tar.getmembers()
                 files_restored = len(members)
 
