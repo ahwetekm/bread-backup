@@ -97,9 +97,16 @@ cd bread-backup
 # 3. Pipx ile kur (editable mode)
 pipx install -e .
 
-# 4. Kurulumu test et
+# 4. Shell'i yenile (özellikle fish shell için)
+hash -r 2>/dev/null || fish_update_completions 2>/dev/null || true
+
+# 5. Kurulumu test et
 bread-backup --version
 # bread-backup, version 0.1.0
+
+# Eğer "command not found" hatası alırsanız:
+# ~/.local/bin/bread-backup --version
+# veya yeni bir terminal açın
 ```
 
 **Avantajlar:**
@@ -358,17 +365,28 @@ pip install -e .
 
 ### Sorun 5: "command not found: bread-backup" (pipx kurulumundan sonra)
 
-**Neden:** PATH'de `~/.local/bin` yok.
+**Neden 1:** Shell cache güncel değil (özellikle fish shell)
 
-**Çözüm:**
+**Çözüm 1:**
 ```bash
-# PATH'e ekle
+# Yeni terminal aç veya shell'i yenile
+hash -r  # bash/zsh için
+fish_update_completions  # fish için
+
+# Direkt çalıştır
+~/.local/bin/bread-backup --version
+```
+
+**Neden 2:** PATH'de `~/.local/bin` yok
+
+**Çözüm 2:**
+```bash
+# Bash/Zsh için
 echo 'export PATH="$HOME/.local/bin:$PATH"' >> ~/.bashrc
 source ~/.bashrc
 
-# Veya hemen kullan
-export PATH="$HOME/.local/bin:$PATH"
-bread-backup --version
+# Fish için
+fish_add_path ~/.local/bin
 ```
 
 ---

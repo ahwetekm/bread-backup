@@ -21,8 +21,14 @@ git clone https://github.com/ahwetekm/bread-backup.git
 cd bread-backup
 pipx install -e .
 
+# Refresh shell (if using fish)
+hash -r 2>/dev/null || true
+
 # Verify installation
 bread-backup --version
+
+# If you get "command not found":
+# ~/.local/bin/bread-backup --version
 ```
 
 ## Your First Backup (2 minutes)

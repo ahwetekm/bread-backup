@@ -19,8 +19,14 @@ git clone https://github.com/ahwetekm/bread-backup.git
 cd bread-backup
 pipx install -e .
 
+# Shell'i yenile (fish kullanıyorsanız)
+hash -r 2>/dev/null || true
+
 # Kurulumu doğrulayın
 bread-backup --version
+
+# Eğer "command not found" hatası alırsanız:
+# ~/.local/bin/bread-backup --version
 ```
 
 ## İlk Backup'ınız (2 dakika)
