@@ -1,0 +1,77 @@
+# Bread-Backup Default Exclude Patterns
+# Lines starting with # are comments
+# Use gitignore-style patterns
+
+# Cache directories
+**/.cache/*
+**/Cache/*
+**/cache/*
+**/.thumbnails/*
+
+# Lock and PID files
+**/*.lock
+**/*.pid
+**/*.socket
+
+# Temporary files
+**/*.tmp
+**/*.temp
+**/tmp/*
+**/.tmp/*
+
+# Browser caches and data
+**/.mozilla/firefox/*/cache2/*
+**/.mozilla/firefox/*/thumbnails/*
+**/.config/google-chrome/*/Cache/*
+**/.config/google-chrome/*/Code Cache/*
+**/.config/google-chrome/*/GPUCache/*
+**/.config/chromium/*/Cache/*
+**/.config/chromium/*/Code Cache/*
+**/.config/chromium/*/GPUCache/*
+
+# VSCode / Code - OSS
+**/.config/Code/Cache/*
+**/.config/Code/CachedData/*
+**/.config/Code/logs/*
+**/.config/Code/GPUCache/*
+**/.vscode/extensions/*
+
+# Development tools
+**/node_modules/*
+**/.npm/*
+**/.cargo/registry/*
+**/.cargo/git/*
+**/.rustup/toolchains/*
+**/__pycache__/*
+**/.pytest_cache/*
+**/.venv/*
+**/venv/*
+**/.gradle/*
+**/.m2/repository/*
+
+# Build artifacts
+**/build/*
+**/dist/*
+**/target/*
+**/*.o
+**/*.so
+**/*.a
+
+# IDE caches
+**/.idea/workspace.xml
+**/.idea/tasks.xml
+
+# Application caches
+**/discord/Cache/*
+**/discord/Code Cache/*
+**/slack/Cache/*
+**/slack/Code Cache/*
+**/spotify/Data/*
+
+# System
+**/.local/share/Trash/*
+**/.gvfs/*
+
+# Logs (optional - uncomment if you don't want to backup logs)
+# **/*.log
+# **/logs/*

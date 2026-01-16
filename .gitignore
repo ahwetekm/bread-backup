@@ -1,0 +1,81 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual environments
+venv/
+env/
+ENV/
+.venv
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+.nox/
+
+# Type checking
+.mypy_cache/
+.pytype/
+.pyre/
+.dmypy.json
+dmypy.json
+
+# Distribution
+*.tar.gz
+*.tar.zst
+*.tar.xz
+*.zip
+*.bread
+
+# Logs
+*.log
+logs/
+
+# Backup files
+backup-*/
+*.backup
+*.bak
+
+# Sensitive data
+credentials.json
+*.key
+*.pem
+*.gpg
+secrets.yaml
+
+# Build artifacts
+*.o
+*.a
+
+# Project specific
+/test-backups/
+/restore-temp/
