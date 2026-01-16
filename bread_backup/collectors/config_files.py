@@ -143,7 +143,9 @@ class ConfigCollector:
             permissions_data = {}
 
             for file_path in files_to_backup:
-                rel_path = file_path.relative_to(config_dir.parent)
+                # Get path relative to config_dir (not config_dir.parent)
+                # This avoids including .config/ twice in the archive
+                rel_path = file_path.relative_to(config_dir)
                 dest_path = temp_dir / rel_path
 
                 # Create parent directories
