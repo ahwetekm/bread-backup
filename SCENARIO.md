@@ -65,7 +65,8 @@ sudo pacman -S python-click python-rich python-yaml git base-devel
 
 git clone https://github.com/ahwetekm/bread-backup.git
 cd bread-backup
-sudo pip install -e .
+pip install --user -e .
+export PATH="$HOME/.local/bin:$PATH"
 ```
 
 **Adım 3: Backup'ı Kopyala**
@@ -187,7 +188,8 @@ pacstrap /mnt base linux linux-firmware
 arch-chroot /mnt
 pacman -S python-click python-rich python-yaml git
 git clone https://github.com/ahwetekm/bread-backup.git
-cd bread-backup && pip install -e .
+cd bread-backup && pip install --user -e .
+export PATH="$HOME/.local/bin:$PATH"
 
 # Backup'ı kopyala
 cp /backup/backup-mehmet-pc.bread /tmp/
@@ -373,7 +375,8 @@ bread-backup backup --destination /home/can/backup
 ```bash
 sudo pacman -S python-click python-rich python-yaml git
 git clone https://github.com/ahwetekm/bread-backup.git
-cd bread-backup && sudo pip install -e .
+cd bread-backup && pip install --user -e .
+export PATH="$HOME/.local/bin:$PATH"
 ```
 
 **Adım 4: Backup'ı Kopyala**

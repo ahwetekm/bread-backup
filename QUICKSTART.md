@@ -19,7 +19,10 @@ sudo pacman -S python-click python-rich python-yaml git
 # Clone and install
 git clone https://github.com/ahwetekm/bread-backup.git
 cd bread-backup
-sudo pip install -e .
+pip install --user -e .
+
+# Add to PATH if needed
+export PATH="$HOME/.local/bin:$PATH"
 
 # Verify installation
 bread-backup --version
@@ -114,7 +117,8 @@ bread-backup restore backup-file.bread --config-only
 cd ~/Projects
 git clone https://github.com/ahwetekm/bread-backup.git
 cd bread-backup
-sudo pip install -e .
+pip install --user -e .
+export PATH="$HOME/.local/bin:$PATH"
 
 # Day 1: First backup
 bread-backup backup --destination /backup

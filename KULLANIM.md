@@ -31,7 +31,10 @@ git clone https://github.com/ahwetekm/bread-backup.git
 cd bread-backup
 
 # Kurun (geliştirme modu)
-sudo pip install -e .
+pip install --user -e .
+
+# PATH'e ekleyin (gerekirse)
+export PATH="$HOME/.local/bin:$PATH"
 ```
 
 ### Adım 3: Kurulumu Test Edin
@@ -246,7 +249,8 @@ sudo pacman -S python python-pip python-click python-rich python-yaml
 cd /tmp
 git clone https://github.com/ahwetekm/bread-backup.git
 cd bread-backup
-sudo pip install -e .
+pip install --user -e .
+export PATH="$HOME/.local/bin:$PATH"
 ```
 
 ### Backup Dosyasını Yeni Sisteme Aktarın

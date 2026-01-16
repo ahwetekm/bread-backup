@@ -95,9 +95,12 @@ git clone https://github.com/ahwetekm/bread-backup.git
 cd bread-backup
 
 # 3. Geliştirme modunda kur
-sudo pip install -e .
+pip install --user -e .
 
-# 4. Kurulumu test et
+# 4. PATH'e ekle (gerekirse)
+export PATH="$HOME/.local/bin:$PATH"
+
+# 5. Kurulumu test et
 bread-backup --version
 # bread-backup, version 0.1.0
 ```
@@ -109,7 +112,7 @@ bread-backup --version
 
 **Dezavantajlar:**
 - ⚠️ Proje dizinini silmemelisiniz
-- ⚠️ sudo pip kullanımı (sistem-wide)
+- ⚠️ PATH ayarı gerekebilir (ilk kullanımda)
 
 ---
 
@@ -254,7 +257,7 @@ Hatasız çalışmalı ve paket sayısını göstermeli.
 ```bash
 cd ~/Projects/bread-backup
 git pull
-sudo pip install -e .
+pip install --user -e .
 ```
 
 ### Pip Kurulum Güncelleme
@@ -273,7 +276,7 @@ pip install --user --upgrade .
 
 ```bash
 # Paketi kaldır
-sudo pip uninstall bread-backup
+pip uninstall bread-backup
 
 # Projeyi sil (opsiyonel)
 rm -rf ~/Projects/bread-backup
@@ -338,16 +341,12 @@ sudo pacman -S python-pip
 
 ### Sorun 4: "Permission denied" (sudo pip install)
 
-**Neden:** Yazma izni yok.
+**Neden:** Yazma izni yok veya externally-managed-environment hatası.
 
-**Çözüm 1:** sudo kullanın:
+**Çözüm (Önerilen):** Kullanıcı modunda kurun:
 ```bash
-sudo pip install -e .
-```
-
-**Çözüm 2:** Kullanıcı modunda kurun:
-```bash
-pip install --user .
+pip install --user -e .
+export PATH="$HOME/.local/bin:$PATH"
 ```
 
 ---
