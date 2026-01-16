@@ -373,9 +373,9 @@ git push origin yeni-ozellik
 
 ## İletişim
 
-- **GitHub:** https://github.com/yourusername/bread-backup
-- **Issues:** https://github.com/yourusername/bread-backup/issues
-- **Discussions:** https://github.com/yourusername/bread-backup/discussions
+- **GitHub:** https://github.com/ahwetekm/bread-backup
+- **Issues:** https://github.com/ahwetekm/bread-backup/issues
+- **Discussions:** https://github.com/ahwetekm/bread-backup/discussions
 
 ## Lisans
 

@@ -91,7 +91,7 @@ sudo pacman -S python-click python-rich python-yaml git base-devel
 
 # 2. Projeyi klonla
 cd ~/Projects  # veya istediğiniz dizin
-git clone https://github.com/yourusername/bread-backup.git
+git clone https://github.com/ahwetekm/bread-backup.git
 cd bread-backup
 
 # 3. Geliştirme modunda kur
@@ -122,7 +122,7 @@ Sisteme karışmadan sadece kullanıcı için kurulum.
 sudo pacman -S python-click python-rich python-yaml git
 
 # 2. Projeyi klonla
-git clone https://github.com/yourusername/bread-backup.git
+git clone https://github.com/ahwetekm/bread-backup.git
 cd bread-backup
 
 # 3. Kullanıcı için kur (sudo yok)
@@ -155,7 +155,7 @@ Tamamen izole bir ortamda kurulum.
 sudo pacman -S python-click python-rich python-yaml git
 
 # 2. Projeyi klonla
-git clone https://github.com/yourusername/bread-backup.git
+git clone https://github.com/ahwetekm/bread-backup.git
 cd bread-backup
 
 # 3. Virtual environment oluştur
@@ -475,8 +475,8 @@ mypy bread_backup/
 Kurulum sorunlarında:
 1. Bu dokümanı okuyun
 2. [KULLANIM.md](KULLANIM.md) - Sorun giderme bölümü
-3. [GitHub Issues](https://github.com/yourusername/bread-backup/issues)
-4. [GitHub Discussions](https://github.com/yourusername/bread-backup/discussions)
+3. [GitHub Issues](https://github.com/ahwetekm/bread-backup/issues)
+4. [GitHub Discussions](https://github.com/ahwetekm/bread-backup/discussions)
 
 ---
 

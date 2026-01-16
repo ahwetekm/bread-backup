@@ -30,7 +30,7 @@ A comprehensive backup and restore tool for Arch Linux systems.
 sudo pacman -S python-click python-rich python-yaml git
 
 # Clone and install
-git clone https://github.com/yourusername/bread-backup.git
+git clone https://github.com/ahwetekm/bread-backup.git
 cd bread-backup
 sudo pip install -e .
 
@@ -305,7 +305,7 @@ Add patterns like:
 
 ```bash
 # Clone repository
-git clone https://github.com/yourusername/bread-backup.git
+git clone https://github.com/ahwetekm/bread-backup.git
 cd bread-backup
 
 # Create virtual environment
@@ -393,8 +393,8 @@ MIT License - see [LICENSE](LICENSE) file for details.
 
 ## Support
 
-- **Issues**: [GitHub Issues](https://github.com/yourusername/bread-backup/issues)
-- **Discussions**: [GitHub Discussions](https://github.com/yourusername/bread-backup/discussions)
+- **Issues**: [GitHub Issues](https://github.com/ahwetekm/bread-backup/issues)
+- **Discussions**: [GitHub Discussions](https://github.com/ahwetekm/bread-backup/discussions)
 - **Arch Wiki**: Contribute your experiences!
 
 ---

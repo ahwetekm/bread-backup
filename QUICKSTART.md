@@ -17,7 +17,7 @@ Get up and running with Bread-Backup in 5 minutes!
 sudo pacman -S python-click python-rich python-yaml git
 
 # Clone and install
-git clone https://github.com/yourusername/bread-backup.git
+git clone https://github.com/ahwetekm/bread-backup.git
 cd bread-backup
 sudo pip install -e .
 
@@ -104,15 +104,15 @@ bread-backup restore backup-file.bread --config-only
 
 - 📖 Full documentation: [KULLANIM.md](KULLANIM.md) (Turkish)
 - 📖 Full documentation: [README.md](README.md) (English)
-- 🐛 Report issues: [GitHub Issues](https://github.com/yourusername/bread-backup/issues)
-- 💬 Ask questions: [GitHub Discussions](https://github.com/yourusername/bread-backup/discussions)
+- 🐛 Report issues: [GitHub Issues](https://github.com/ahwetekm/bread-backup/issues)
+- 💬 Ask questions: [GitHub Discussions](https://github.com/ahwetekm/bread-backup/discussions)
 
 ## Example Workflow
 
 ```bash
 # Day 1: Setup
 cd ~/Projects
-git clone https://github.com/yourusername/bread-backup.git
+git clone https://github.com/ahwetekm/bread-backup.git
 cd bread-backup
 sudo pip install -e .
 

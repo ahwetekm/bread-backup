@@ -27,7 +27,7 @@ sudo pacman -S python-click python-rich python-yaml git
 ```bash
 # Projeyi klonlayın
 cd ~/Downloads
-git clone https://github.com/yourusername/bread-backup.git
+git clone https://github.com/ahwetekm/bread-backup.git
 cd bread-backup
 
 # Kurun (geliştirme modu)
@@ -244,7 +244,7 @@ sudo pacman -S python python-pip python-click python-rich python-yaml
 
 ```bash
 cd /tmp
-git clone https://github.com/yourusername/bread-backup.git
+git clone https://github.com/ahwetekm/bread-backup.git
 cd bread-backup
 sudo pip install -e .
 ```
@@ -832,7 +832,7 @@ chmod +x ~/bin/my-backup.sh
 
 ### Hata Bildirimi
 
-GitHub Issues: https://github.com/yourusername/bread-backup/issues
+GitHub Issues: https://github.com/ahwetekm/bread-backup/issues
 
 ### Dokümantasyon
 
@@ -893,4 +893,4 @@ MIT License - Özgürce kullanabilirsiniz!
 
 **Made with ❤️ for Arch Linux users**
 
-Herhangi bir sorunuz varsa: https://github.com/yourusername/bread-backup/discussions
+Herhangi bir sorunuz varsa: https://github.com/ahwetekm/bread-backup/discussions

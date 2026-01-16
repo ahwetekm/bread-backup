@@ -63,7 +63,7 @@ sudo umount /mnt/usb
 ```bash
 sudo pacman -S python-click python-rich python-yaml git base-devel
 
-git clone https://github.com/yourusername/bread-backup.git
+git clone https://github.com/ahwetekm/bread-backup.git
 cd bread-backup
 sudo pip install -e .
 ```
@@ -186,7 +186,7 @@ pacstrap /mnt base linux linux-firmware
 # Bread-backup kur
 arch-chroot /mnt
 pacman -S python-click python-rich python-yaml git
-git clone https://github.com/yourusername/bread-backup.git
+git clone https://github.com/ahwetekm/bread-backup.git
 cd bread-backup && pip install -e .
 
 # Backup'ı kopyala
@@ -372,7 +372,7 @@ bread-backup backup --destination /home/can/backup
 **Adım 3: Bread-Backup Kur**
 ```bash
 sudo pacman -S python-click python-rich python-yaml git
-git clone https://github.com/yourusername/bread-backup.git
+git clone https://github.com/ahwetekm/bread-backup.git
 cd bread-backup && sudo pip install -e .
 ```
 

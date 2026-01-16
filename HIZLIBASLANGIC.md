@@ -15,7 +15,7 @@ Bread-Backup ile 5 dakikada başlayın!
 sudo pacman -S python-click python-rich python-yaml git
 
 # Klonlayın ve kurun
-git clone https://github.com/yourusername/bread-backup.git
+git clone https://github.com/ahwetekm/bread-backup.git
 cd bread-backup
 sudo pip install -e .
 
@@ -102,15 +102,15 @@ bread-backup restore backup-dosyasi.bread --config-only
 
 - 📖 Tam dokümantasyon: [KULLANIM.md](KULLANIM.md) (Türkçe)
 - 📖 İngilizce versiyon: [README.md](README.md)
-- 🐛 Hata bildirin: [GitHub Issues](https://github.com/yourusername/bread-backup/issues)
-- 💬 Soru sorun: [GitHub Discussions](https://github.com/yourusername/bread-backup/discussions)
+- 🐛 Hata bildirin: [GitHub Issues](https://github.com/ahwetekm/bread-backup/issues)
+- 💬 Soru sorun: [GitHub Discussions](https://github.com/ahwetekm/bread-backup/discussions)
 
 ## Örnek İş Akışı
 
 ```bash
 # Gün 1: Kurulum
 cd ~/Projects
-git clone https://github.com/yourusername/bread-backup.git
+git clone https://github.com/ahwetekm/bread-backup.git
 cd bread-backup
 sudo pip install -e .
 
