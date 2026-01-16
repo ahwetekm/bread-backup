@@ -1,5 +1,11 @@
 # Bread-Backup 🍞
 
+[![Version](https://img.shields.io/badge/version-0.1.0-blue.svg)](https://github.com/ahwetekm/bread-backup)
+[![Status](https://img.shields.io/badge/status-beta-yellow.svg)](https://github.com/ahwetekm/bread-backup)
+[![Python](https://img.shields.io/badge/python-3.10%2B-brightgreen.svg)](https://www.python.org/)
+[![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
+[![Arch Linux](https://img.shields.io/badge/arch-linux-1793d1.svg)](https://archlinux.org/)
+
 A comprehensive backup and restore tool for Arch Linux systems.
 
 > 🇹🇷 **Türkçe Dokümantasyon:**
@@ -26,27 +32,28 @@ A comprehensive backup and restore tool for Arch Linux systems.
 ### Quick Install (Recommended)
 
 ```bash
-# Install dependencies
-sudo pacman -S python-click python-rich python-yaml git
+# Install pipx
+sudo pacman -S python-pipx git
 
 # Clone and install
 git clone https://github.com/ahwetekm/bread-backup.git
 cd bread-backup
-sudo pip install -e .
+pipx install -e .
 
 # Verify installation
 bread-backup --version
 ```
 
+> 📖 **Detailed Installation Guide**: See [INSTALL.md](INSTALL.md) for alternative installation methods (virtual environment, system packages)
+
 ### System Requirements
 
 - **OS**: Arch Linux (or Arch-based distros like Manjaro, EndeavourOS)
-- **Python**: 3.10 or higher
-- **Required Packages**:
-  - `python-click` - CLI framework
-  - `python-rich` - Beautiful terminal output
-  - `python-yaml` - YAML parsing
-- **Required Tools**: `pacman`, `tar`, compression tools (`gzip`/`zstd`)
+- **Python**: 3.10 or higher (3.11+ recommended)
+- **Required Tools**:
+  - `python-pipx` - Modern Python app installer
+  - `pacman` - Arch package manager
+  - `tar`, `zstd` - Archive and compression
 - **Optional**: `yay` or `paru` for AUR package restoration
 
 ### For Users (When Package Available)
@@ -391,11 +398,45 @@ MIT License - see [LICENSE](LICENSE) file for details.
 - Built for the Arch Linux community
 - Uses Click for CLI, Rich for beautiful terminal output
 
+## Tested & Working ✅
+
+**Real-world test results** (2026-01-16):
+
+```bash
+# Test System
+- OS: Arch Linux (CachyOS kernel 6.18.5)
+- Python: 3.14.2
+- Packages: 1369 total (268 explicit, 3 AUR)
+- Config files: 3307 files (~430 MB)
+
+# Backup Performance
+- Backup size: 332 MB (compressed with zstd)
+- Compression ratio: ~23% (430 MB → 332 MB)
+- Backup time: ~2 minutes
+
+# Commands Tested
+✅ bread-backup backup --destination ~/backups
+✅ bread-backup list --destination ~/backups
+✅ bread-backup info backup-file.bread
+✅ bread-backup verify backup-file.bread
+⏳ bread-backup restore (requires sudo, not yet tested)
+```
+
+**All core features are working:**
+- ✅ Package collection (pacman + AUR detection)
+- ✅ Config file backup with permissions
+- ✅ Zstd compression
+- ✅ Checksum verification
+- ✅ Metadata generation
+- ✅ Beautiful terminal UI with progress bars
+- ⏳ Restore functionality (implemented, needs testing)
+
 ## Support
 
 - **Issues**: [GitHub Issues](https://github.com/ahwetekm/bread-backup/issues)
 - **Discussions**: [GitHub Discussions](https://github.com/ahwetekm/bread-backup/discussions)
 - **Arch Wiki**: Contribute your experiences!
+- **Documentation**: [KULLANIM.md](KULLANIM.md) (Turkish) | [QUICKSTART.md](QUICKSTART.md) (English)
 
 ---
 
